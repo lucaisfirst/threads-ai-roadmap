@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Calendar, BarChart3, MessageSquare, Search, Zap, Settings, User, Plus } from 'lucide-react';
+import { Calendar, BarChart3, MessageSquare, Search, Zap, Settings, User, Plus, CreditCard, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -15,6 +15,8 @@ const menuItems = [
   { id: 'comments', icon: MessageSquare, label: '답글 관리', color: 'text-purple-600' },
   { id: 'search', icon: Search, label: '인기 스레드 상호작용', color: 'text-orange-600' },
   { id: 'ai-tools', icon: Zap, label: 'AI 기능', color: 'text-indigo-600' },
+  { id: 'pricing', icon: CreditCard, label: '구독 관리', color: 'text-pink-600' },
+  { id: 'support', icon: HelpCircle, label: '고객 지원', color: 'text-yellow-600' },
   { id: 'settings', icon: Settings, label: '사용 설정', color: 'text-gray-600' },
 ];
 
@@ -25,9 +27,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">I2P</span>
+            <span className="text-white font-bold text-sm">A</span>
           </div>
-          <span className="font-bold text-xl text-gray-900">Idea2Post</span>
+          <span className="font-bold text-xl text-gray-900">Allmize</span>
         </div>
       </div>
 

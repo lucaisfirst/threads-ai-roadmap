@@ -5,6 +5,8 @@ import ContentCalendar from '@/components/dashboard/ContentCalendar';
 import AnalyticsDashboard from '@/components/dashboard/AnalyticsDashboard';
 import CommentManager from '@/components/dashboard/CommentManager';
 import AITools from '@/components/dashboard/AITools';
+import PricingPage from '@/components/dashboard/PricingPage';
+import SupportChat from '@/components/dashboard/SupportChat';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -19,6 +21,10 @@ const Index = () => {
         return <CommentManager />;
       case 'ai-tools':
         return <AITools />;
+      case 'pricing':
+        return <PricingPage />;
+      case 'support':
+        return <SupportChat />;
       case 'search':
         return (
           <div className="p-6">
