@@ -57,6 +57,24 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
         })}
       </nav>
 
+      {/* Status Section */}
+      <div className="p-4 space-y-3 border-t border-gray-100">
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <Zap className="h-4 w-4 text-purple-500" />
+          <span>플랜: free-trial</span>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 flex items-center justify-center">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+          </div>
+          <span>AI 크레딧: 21/30</span>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <User className="h-4 w-4 text-pink-500" />
+          <span>연동 계정 수: 1/5</span>
+        </div>
+      </div>
+
       {/* User Profile Section */}
       <div className="p-4 border-t border-gray-100">
         <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">

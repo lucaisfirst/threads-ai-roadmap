@@ -11,17 +11,17 @@ const PricingPage: React.FC = () => {
   const plans = [
     {
       name: '스탠다드',
-      price: billingPeriod === 'monthly' ? 25 : 250,
-      period: billingPeriod === 'monthly' ? '월' : '연',
-      originalPrice: billingPeriod === 'yearly' ? 300 : null,
-      discount: billingPeriod === 'yearly' ? '17% 할인' : null,
-      description: 'AI 기반의 SNS 계정을 완전 자동화하세요. 마케팅 워크플로우 5% 마음에 드는 것만 자동화',
+      price: billingPeriod === 'monthly' ? 25 : 20,
+      period: billingPeriod === 'monthly' ? '월' : '월',
+      originalPrice: billingPeriod === 'yearly' ? 25 : null,
+      discount: billingPeriod === 'yearly' ? '연간 결제 시 20% 할인' : null,
+      description: 'AI 기반의 SNS 계정을 완전 자동화하세요. 전담 마케팅 대행사처럼 워크플로우를 자동화합니다.',
       features: [
         { name: '계정당 완전 자동화 운영', included: true },
         { name: 'AI 자동 콘텐츠 생성 무제한', included: true },
         { name: 'AI 자동 댓글 관리', included: true },
         { name: '성과 분석 및 리포팅 대시보드', included: true },
-        { name: '최대 3개 계정까지 학습 가능', included: true },
+        { name: '최대 3개 계정까지 연동 가능', included: true },
         { name: '스레드 마케팅 컨설팅', included: false },
         { name: '리포스팅 부스트 알고리즘', included: false }
       ],
@@ -35,8 +35,8 @@ const PricingPage: React.FC = () => {
     '스탠다드 플랜 모든 기능 포함',
     '계정 무제한 연동',
     '스레드 마케팅 컨설팅 지원',
-    '초고수 부스트 알고리즘',
-    '빌링/소훚형 OSMU 기능',
+    '프리미엄 부스트 알고리즘',
+    '고급 분석 리포트 기능',
     'API 접근 및 커스텀 통합',
     '전담 계정 관리자 배정'
   ];
@@ -46,7 +46,7 @@ const PricingPage: React.FC = () => {
       <div className="text-center space-y-4">
         <h1 className="text-3xl font-bold text-gray-900">합리적인 가격으로 시작하세요</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          계정당 월 $25로 당신의 SNS 계정을 완전 자동화하세요. AI가 콘텐츠 생성부터 운영까지, 마치 전담 마케팅 대행사처럼 관리해드립니다.
+          계정당 월 $20부터 시작하여 당신의 SNS 계정을 완전 자동화하세요. AI가 콘텐츠 생성부터 운영까지, 마치 전담 마케팅 대행사처럼 관리해드립니다.
         </p>
       </div>
 
@@ -95,7 +95,7 @@ const PricingPage: React.FC = () => {
         <Card className="relative">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold text-purple-600">스탠다드</CardTitle>
-            <p className="text-sm text-gray-600 mt-2">AI 기반의 SNS 계정을 완전 자동화하세요. 마케 전담 마케팅 대행사가 되어 마케팅 워크플로우 5% 마음에 드는 것만 자동화</p>
+            <p className="text-sm text-gray-600 mt-2">AI 기반의 SNS 계정을 완전 자동화하세요. 전담 마케팅 대행사처럼 워크플로우를 자동화합니다.</p>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
@@ -111,16 +111,16 @@ const PricingPage: React.FC = () => {
                 </div>
               )}
               <div className="text-sm text-gray-600 mt-1">
-                마케팅 워크플로우를 5% 마음에 드는 것만 자동화
+                {billingPeriod === 'yearly' ? '연간 결제 시 할인 적용' : '월간 결제'}
               </div>
             </div>
 
             <div className="space-y-2">
-              <p className="text-sm font-medium text-gray-900">연동 계정 수 신택 (구독 시 적용):</p>
+              <p className="text-sm font-medium text-gray-900">연동 계정 수 선택 (구독 시 적용):</p>
               <div className="flex space-x-2">
-                <Badge variant="secondary">1개 (월 $25)</Badge>
-                <Badge variant="outline">2개 (월 $50)</Badge>
-                <Badge variant="outline">3개 (월 $75)</Badge>
+                <Badge variant="secondary">1개 (월 ${billingPeriod === 'yearly' ? '20' : '25'})</Badge>
+                <Badge variant="outline">2개 (월 ${billingPeriod === 'yearly' ? '40' : '50'})</Badge>
+                <Badge variant="outline">3개 (월 ${billingPeriod === 'yearly' ? '60' : '75'})</Badge>
               </div>
             </div>
 
@@ -184,7 +184,7 @@ const PricingPage: React.FC = () => {
           </div>
           <div className="flex items-center space-x-2">
             <Zap className="h-4 w-4" />
-            <span>AI 크레딧: 27/30</span>
+            <span>AI 크레딧: 21/30</span>
           </div>
           <div className="flex items-center space-x-2">
             <Users className="h-4 w-4" />
